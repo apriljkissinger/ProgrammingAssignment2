@@ -3,7 +3,7 @@
 rm (list =ls())
 
 ## makeCacheMatrix are the getter and setter functions that get a matrix m in and then perform the inverse calculation on it, 
-## and clears out any inverse that has already been computed in the cache.
+## and it clears out any inverse that has already been computed in the cache.
 
 makeCacheMatrix <- function(x = matrix()){
         m <- NULL
@@ -17,7 +17,8 @@ makeCacheMatrix <- function(x = matrix()){
         list(set = set, get = get, setinv = setinv, getinv = getinv )
 }
 
-## cacheSolve executes and returns a matrix that it is the inverse of mat.
+## cacheSolve executes and returns a matrix that is the inverse of m. If the inverse has already been calculated 
+## it then retrieves the inverse from the cache
 
 cacheSolve <- function(x, ...) {
         m <- x$getinv()
